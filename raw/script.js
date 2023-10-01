@@ -1,7 +1,7 @@
-//const button = document.getElementById("button");
-// const input = document.querySelector(".search-bar");
-const APIKey = "API_KEY";
-let input = "Dhaka";
+const button = document.getElementById("button");
+ const input = document.querySelector(".search-bar");
+const APIKey = "e70528456668973f6dcf59191436f5f2";
+//let input = "Dhaka";
 function fetchWeather(input) {
   fetch(`https://api.weatherapi.com/v1/current.json?key=${APIKey}&q=${input}`)
     .then((respone) => respone.json())
