@@ -1,5 +1,5 @@
 const button = document.getElementById("button");
- const input = document.querySelector(".search-bar");
+const input = document.querySelector(".search-bar");
 const APIKey = "e70528456668973f6dcf59191436f5f2";
 //let input = "Dhaka";
 function fetchWeather(input) {

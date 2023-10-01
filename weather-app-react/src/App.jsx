@@ -1,6 +1,5 @@
-import { CircularProgress, Slide, TextField } from "@mui/material";
+import { CircularProgress, Slide } from "@mui/material";
 import { useEffect, useState } from "react";
-import img from "./assets/img/clear.jpg";
 import "./App.css";
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
       .then((data) => {
         setData(data);
       })
-      .catch(() => setError(true))
+      .catch(() => setError(false))
       .finally(() => setLoading(false));
   }, [cityName, error]);
 
@@ -37,29 +36,12 @@ function App() {
     }
   };
 
-  //  const backgroundImage = () {
-  //   let wdata = data.weather[0].main;
-  //   let backgroundImage;
-
-  //   if(wdata == 'Thunderstorm')
-  //     backgroundImage = 'url()'
-
-  //  }
-
-  //   const image = {
-  //     backgroundImage,
-  //     backgroundRepeat: "no-repeat",
-  //     backgroundSize: "cover",
-  //     backgroundPosition: "center",
-  //   };
-
   return (
-    <div className={`bg_img`}>
+    <div className="bg_img">
       {!loading ? (
         <>
-          <TextField
-            variant="filled"
-            label="Search location"
+          <input
+            placeholder="Search location"
             className="input"
             error={error}
             value={inputText}
@@ -67,6 +49,7 @@ function App() {
             onKeyDown={handleSearch}
           />
           <h1 className="city">{data.name}</h1>
+
           <div className="group">
             <img
               src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
